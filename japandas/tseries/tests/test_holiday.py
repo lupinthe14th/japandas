@@ -132,10 +132,10 @@ class TestCalendar(unittest.TestCase):
         for calendar in [jpd.TSEHolidayCalendar(),
                          jpd.JapaneseHolidayCalendar()]:
             holidays = calendar.holidays()
-            
+
             self.assertTrue(datetime.datetime(2018, 12, 23) in holidays)
             self.assertFalse(datetime.datetime(2019, 12, 23) in holidays)
-            
+
             self.assertFalse(datetime.datetime(2019, 2, 23) in holidays)
             self.assertTrue(datetime.datetime(2020, 2, 23) in holidays)
 
@@ -145,12 +145,12 @@ class TestCalendar(unittest.TestCase):
         for calendar in [jpd.TSEHolidayCalendar(),
                          jpd.JapaneseHolidayCalendar()]:
             holidays = calendar.holidays()
-           
+
             # 海の日
             self.assertTrue(datetime.datetime(2020, 7, 23) in holidays)
             self.assertFalse(datetime.datetime(2020, 7, 20) in holidays)
             self.assertTrue(datetime.datetime(2021, 7, 19) in holidays)
- 
+
             # 山の日
             self.assertTrue(datetime.datetime(2020, 8, 10) in holidays)
             self.assertFalse(datetime.datetime(2020, 8, 11) in holidays)
